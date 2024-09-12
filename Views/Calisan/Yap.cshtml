@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Yap";
+    Layout = "~/Views/Shared/_LayoutCalisan.cshtml";
+}
+
+<div class="container mt-5">
+    @foreach (var i in ViewBag.isler)
+    {
+        
+       <form method="post" asp-action="Yap" asp-controller="Calisan">
+           <div class="card">
+               <div class="card-header text-center">
+                   @i.IsBaslık
+               </div>
+               <div class="card-body">
+                   @i.IsAcıklama
+                   <input type="hidden" name="IsId" value="@i.IsId">
+               </div>
+               <div class="card-footer">
+                   <button type="submit" class="btn-outline-success">Tamamla</button>
+               </div>
+           </div>
+           <br/>
+           </form>
+    }
+</div>
+

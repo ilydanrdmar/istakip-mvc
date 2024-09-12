@@ -1,0 +1,50 @@
+﻿@model iştakip.Models.AtaViewModel
+@{
+    ViewData["Title"] = "Ata";
+    Layout = "~/Views/Shared/_LayoutYonetici.cshtml";
+}
+
+<div class="container mt-5"> 
+    <div class="card">
+        <div class="card-header">
+            @ViewBag.birimAd atama işlemi
+        </div>
+        <div class="card-body">
+            <form method="post" asp-action="Ata" asp-controller="Yönetici">
+                              <div class="mb-3">
+                <label for="IsBaslık" class="form-label">başlık giriniz</label>
+                <input type="text" class="form-control" id="IsBaslık" name="IsBaslık">
+               
+              </div>
+              <div class="mb-3">
+                <label for="IsAcıklama" class="form-label">Açıklama Giriniz</label>
+                <input type="text" class="form-control" id="IsAcıklama"  name="IsAcıklama">
+               
+<div class="mb-3 row">
+    <div class="col-12">
+        <label for="selectPer" class="form-label">Çalışan seçiniz</label>
+    </div>
+    <div class="col-12">
+        <select class="form-select" name="SelectedPersonelId" id="selectPer" style="width: 100%; height: 40px;">
+            <option value="">Bir çalışan seçin</option>
+            @foreach (var Personel in ViewBag.personeller)
+            {
+                <option value="@Personel.PersonelId">@Personel.PersonelAdSoyad</option>
+            }
+        </select>
+    </div>
+</div>
+
+              <div class="mb-3">
+                  <button class="btn btn-outline-primary" type="submit">Danışman Ata</button>
+              </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+ 
+
+
+

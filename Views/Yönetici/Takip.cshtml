@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Takip";
+    Layout = "~/Views/Shared/_LayoutYonetici.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="mb-3">
+        <h3>@ViewBag.birimAd Birimi İçin Listeleme </h3>
+    </div>
+
+     <form method="post" asp-action="Takip" asp-controller="Yönetici">
+          <div class="mb-3">
+               <select class="form-select" name="SelectedPersonelId" id="selectPer" style="width: 100%; height: 40px;">
+            @foreach (var personel in ViewBag.personeller)
+            {
+                <option value="@personel.PersonelId">@personel.PersonelAdSoyad</option>
+            }
+        </select>
+
+          </div>
+          <div class="mb-3">
+        <button class="btn btn-outline-secondary" type="submit">İşleri Getir</button>
+    </div>
+     </form>
+
+</div>
+

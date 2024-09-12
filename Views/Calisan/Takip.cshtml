@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Takip";
+    Layout = "~/Views/Shared/_LayoutCalisan.cshtml";
+  //  @model List<iştakip.Models.Is>
+      @model iştakip.Models.IsDurumModel
+}
+
+<div class="containeratio mt-5">
+    @foreach(var ısDurum in Model.IsDurums)
+    {
+        <div class="card">
+            <div class="card-header bg-black text-center text-white">
+                @ısDurum.IsBaslık
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">@ısDurum.IsAcıklama</li>
+                    <li class="list-group-item">Baslangic Tarihi  : @ısDurum.BaslangicTarih</li>
+                    <li class="list-group-item">Bitis Tarih : @ısDurum.BitisTarih</li>
+                    <li class="list-group-item">İŞ Durum :  @ısDurum.DurumAd</li>
+                
+                </ul>
+
+
+            </div>
+
+        </div>
+        <br />
+    }
+
+</div>
